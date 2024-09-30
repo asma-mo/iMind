@@ -1,6 +1,16 @@
+//
+//  ExampleTamplate.swift
+//  challenge1
+//
+//  Created by Asma on 30/09/2024.
+//
+
 import SwiftUI
 
-struct TamplateView: View { //struct FileName: View
+struct TamplateView<Content: View>: View {
+    var title: String
+    @ViewBuilder var content: Content
+    
     var body: some View {
         ZStack {
             // Use the reusable Off-white background
@@ -14,18 +24,14 @@ struct TamplateView: View { //struct FileName: View
             }
             
             VStack {
-                // Pass the title "Streak" to HeaderView
-                HeaderView(title: "Eaxmple")
+                // Pass the dynamic title to HeaderView
+                HeaderView(title: title)
                 
                 Spacer()
             }
+            
+            content
         }
-    }
-}
-
-struct TamplateView_Previews: PreviewProvider { //struct FileName_Previews: PreviewProvider {
-    static var previews: some View {
-        TamplateView() //FileName)
     }
 }
 

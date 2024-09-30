@@ -15,7 +15,7 @@ struct TamplateView: View { //struct FileName: View
             
             VStack {
                 // Pass the title "Streak" to HeaderView
-                HeaderView(title: "Eaxmple")
+                HeaderView(title: "prctices")
                 
                 Spacer()
             }

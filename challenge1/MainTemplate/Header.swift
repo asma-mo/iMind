@@ -10,7 +10,7 @@ struct HeaderView: View {
                     // Action for back button
                 }) {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(red:242/255, green:241/255, blue:239/255))
                         .font(.system(size: 24, weight: .bold))
                         .padding(.leading, 16)
                 }
@@ -18,7 +18,7 @@ struct HeaderView: View {
                 Spacer()
                 
                 Text(title) // Use the title parameter
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(red:242/255, green:241/255, blue:239/255))
                     .font(.system(size: 36, weight: .bold))
                     .padding(.trailing, 30)
                 

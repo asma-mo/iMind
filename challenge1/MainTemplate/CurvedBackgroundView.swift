@@ -15,7 +15,7 @@ struct CurvedBackgroundView: View {
                                       control: CGPoint(x: width / 2, y: height))
                     path.closeSubpath()
                 }
-                .fill(Color(red: 125/255, green: 130/255, blue: 163/255))
+                .fill(Color(red: 109/255, green:119/255, blue: 157/255 ))
                 
                 Image("flame")
                     .resizable()

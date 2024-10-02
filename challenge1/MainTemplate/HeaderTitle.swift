@@ -1,9 +1,12 @@
 import SwiftUI
 
-struct CurvedBackgroundView: View {
+struct HeaderTitle: View {
+    var title: String
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
+            
                 Path { path in
                     let width = geometry.size.width
                     let height = geometry.size.height
@@ -17,6 +20,7 @@ struct CurvedBackgroundView: View {
                 }
                 .fill(Color(red: 125/255, green: 130/255, blue: 163/255))
                 
+                // Flame image
                 Image("flame")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -24,9 +28,38 @@ struct CurvedBackgroundView: View {
                     .padding(.top, 92)
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                
+               
+                VStack {
+                    HStack {
+                        Button(action: {
+                          
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(.white)
+                                .font(.system(size: 24, weight: .bold))
+                                .padding(.leading, 16)
+                        }
+                        
+                        Spacer()
+                        
+                        Text(title)
+                            .foregroundColor(.white)
+                            .font(.system(size: 36, weight: .bold))
+                            .padding(.trailing, 30)
+                        
+                        Spacer()
+                    }
+                    .padding(.top, 110)
+                }
             }
         }
         .frame(height: 250)
         .edgesIgnoringSafeArea(.top)
     }
+}
+
+
+#Preview {
+    ScrollText()
 }

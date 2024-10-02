@@ -1,8 +1,8 @@
 //
-//  SocialIsolationView.swift
+//  Procrasination.swift
 //  challenge1
 //
-//  Created by Nouf on 30/09/2024.
+//  Created by Nouf on 02/10/2024.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 
 
 
-struct SocialIsolationView: View {
+struct ProcrastnationView: View {
     @State var didTapButton : Bool = false
     
     
@@ -24,10 +24,10 @@ struct SocialIsolationView: View {
             let beige = Color(red:242/255, green:241/255, blue:239/255)
            
                   VStack{
-                Text("Social Isolation").foregroundColor(Color(red:242/255, green:241/255, blue:239/255))
+                Text("Procrastnation").foregroundColor(Color(red:242/255, green:241/255, blue:239/255))
                     .font(.system(size: 36, weight: .bold))
-                    .padding(.trailing, 30)
-                   .padding(.top, 38)
+                   .padding(.trailing, 30)
+                   .padding(.top, 39)
                 Spacer()
                 
                 VStack{
@@ -107,5 +107,5 @@ struct SocialIsolationView: View {
 
 
 #Preview {
-  SocialIsolationView()
+    ProcrastnationView()
 }

@@ -16,17 +16,8 @@ struct TamplateView<Content: View>: View {
             // Use the reusable Off-white background
             BackgroundView()
 
-            VStack(spacing: 0) {
-                // Use CurvedBackgroundView from mainTemplate
-                CurvedBackgroundView()
-                
-                Spacer()
-            }
-            
-            VStack {
-                // Pass the dynamic title to HeaderView
-                HeaderView(title: title)
-                
+            VStack{
+                HeaderTitle(title: title)
                 Spacer()
             }
             

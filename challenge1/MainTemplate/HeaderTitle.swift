@@ -60,6 +60,4 @@ struct HeaderTitle: View {
 }
 
 
-#Preview {
-    ScrollText()
-}
+

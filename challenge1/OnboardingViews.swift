@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct OnboardingViews: View {
 
     let purple = Color(red: 109/255, green: 119/255, blue: 157/255)
     
@@ -87,6 +87,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        OnboardingViews()
     }
 }

@@ -1,9 +1,19 @@
+//
+//  MainHeaderTitle.swift
+//  challenge1
+//
+//  Created by Nouf on 03/10/2024.
+//
 import SwiftUI
 
-struct CurvedBackgroundView: View {
+struct MainHeaderTitle: View {
+    var title: String
+    
     var body: some View {
+        
         GeometryReader { geometry in
             ZStack(alignment: .top) {
+                
                 Path { path in
                     let width = geometry.size.width
                     let height = geometry.size.height
@@ -15,8 +25,9 @@ struct CurvedBackgroundView: View {
                                       control: CGPoint(x: width / 2, y: height))
                     path.closeSubpath()
                 }
-                .fill(Color(red: 125/255, green: 130/255, blue: 163/255))
+                .fill(Color("Main_Purple"))
                 
+                // Flame image
                 Image("flame")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -24,9 +35,31 @@ struct CurvedBackgroundView: View {
                     .padding(.top, 92)
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                
+                
+                VStack {
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Text(title)
+                            .foregroundColor(Color("off_White"))
+                            .font(.system(size: 36, weight: .bold))
+                            .padding(.trailing, 30)
+                        
+                        Spacer()
+                    }
+                    .padding(.top, 110)
+                }
             }
         }
         .frame(height: 250)
         .edgesIgnoringSafeArea(.top)
+        Spacer()
     }
+}
+
+
+#Preview {
+    MainHeaderTitle(title: "test")
 }

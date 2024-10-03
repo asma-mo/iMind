@@ -18,7 +18,9 @@ struct HeaderTitle: View {
                                       control: CGPoint(x: width / 2, y: height))
                     path.closeSubpath()
                 }
+              
                 .fill(Color("Main_Purple"))
+
                 
                 // Flame image
                 Image("flame")
@@ -36,7 +38,9 @@ struct HeaderTitle: View {
                           
                         }) {
                             Image(systemName: "chevron.left")
+
                                 .foregroundColor(Color("off_White"))
+
                                 .font(.system(size: 24, weight: .bold))
                                 .padding(.leading, 16)
                         }
@@ -44,7 +48,9 @@ struct HeaderTitle: View {
                         Spacer()
                         
                         Text(title)
+
                             .foregroundColor(Color("off_White"))
+
                             .font(.system(size: 36, weight: .bold))
                             .padding(.trailing, 30)
                         

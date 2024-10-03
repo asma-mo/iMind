@@ -1,12 +1,19 @@
+//
+//  MainHeaderTitle.swift
+//  challenge1
+//
+//  Created by Nouf on 03/10/2024.
+//
 import SwiftUI
 
-struct HeaderTitle: View {
+struct MainHeaderTitle: View {
     var title: String
     
     var body: some View {
+        
         GeometryReader { geometry in
             ZStack(alignment: .top) {
-            
+                
                 Path { path in
                     let width = geometry.size.width
                     let height = geometry.size.height
@@ -18,9 +25,7 @@ struct HeaderTitle: View {
                                       control: CGPoint(x: width / 2, y: height))
                     path.closeSubpath()
                 }
-              
                 .fill(Color("Main_Purple"))
-
                 
                 // Flame image
                 Image("flame")
@@ -31,26 +36,14 @@ struct HeaderTitle: View {
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
-               
+                
                 VStack {
                     HStack {
-                        Button(action: {
-                          
-                        }) {
-                            Image(systemName: "chevron.left")
-
-                                .foregroundColor(Color("off_White"))
-
-                                .font(.system(size: 24, weight: .bold))
-                                .padding(.leading, 16)
-                        }
                         
                         Spacer()
                         
                         Text(title)
-
                             .foregroundColor(Color("off_White"))
-
                             .font(.system(size: 36, weight: .bold))
                             .padding(.trailing, 30)
                         
@@ -62,7 +55,11 @@ struct HeaderTitle: View {
         }
         .frame(height: 250)
         .edgesIgnoringSafeArea(.top)
+        Spacer()
     }
 }
 
 
+#Preview {
+    MainHeaderTitle(title: "test")
+}

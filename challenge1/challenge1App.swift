@@ -12,6 +12,7 @@ struct challenge1App: App {
     var body: some Scene {
         WindowGroup {
             SocialPracticeView()
+
             
         }
     }

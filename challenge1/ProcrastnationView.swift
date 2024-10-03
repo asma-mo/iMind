@@ -20,11 +20,10 @@ struct ProcrastnationView: View {
        
         TamplateView(title: "") {
             // Here write your program!! :)
-            let purple = Color(red: 109/255, green:119/255, blue: 157/255 )
-            let beige = Color(red:242/255, green:241/255, blue:239/255)
+           
            
                   VStack{
-                Text("Procrastnation").foregroundColor(Color(red:242/255, green:241/255, blue:239/255))
+                Text("Procrastnation").foregroundColor(Color("off_White"))
                     .font(.system(size: 36, weight: .bold))
                    .padding(.trailing, 30)
                    .padding(.top, 39)
@@ -35,28 +34,28 @@ struct ProcrastnationView: View {
                     
                     ZStack{
                         
-                        Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(purple).cornerRadius(30)
+                        Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(Color("Main_Purple")).cornerRadius(30)
                         
-                        Text("Practice").fontWeight(.semibold).font(.largeTitle).foregroundColor(beige)
+                        Text("Practice").fontWeight(.semibold).font(.largeTitle).foregroundColor(Color("off_White"))
                         
                     }
                     Spacer().frame(height: 20)
                  
                     ZStack{
                         
-                        Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(purple).cornerRadius(30)
+                        Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(Color("Main_Purple")).cornerRadius(30)
                         
-                        Text("Past Experinces").fontWeight(.semibold).font(.largeTitle).foregroundColor(beige)
+                        Text("Past Experinces").fontWeight(.semibold).font(.largeTitle).foregroundColor(Color("off_White"))
                         
                     }
                     Spacer().frame(height:120)
                     ZStack{
                         
-                        Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(purple).cornerRadius(30)
+                        Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(Color("Main_Purple")).cornerRadius(30)
                         
                         HStack{
                             
-                            Text(getCurrentDateString()).fontWeight(.semibold).font(.system(size: 33)).foregroundColor(beige)
+                            Text(getCurrentDateString()).fontWeight(.semibold).font(.system(size: 33)).foregroundColor(Color("off_White"))
                                 .padding(.leading, 15)
                             
                             

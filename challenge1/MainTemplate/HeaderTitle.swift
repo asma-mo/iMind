@@ -1,9 +1,12 @@
 import SwiftUI
 
-struct CurvedBackgroundView: View {
+struct HeaderTitle: View {
+    var title: String
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
+            
                 Path { path in
                     let width = geometry.size.width
                     let height = geometry.size.height
@@ -15,8 +18,9 @@ struct CurvedBackgroundView: View {
                                       control: CGPoint(x: width / 2, y: height))
                     path.closeSubpath()
                 }
-                .fill(Color(red: 109/255, green:119/255, blue: 157/255 ))
+                .fill(Color("Main_Purple"))
                 
+                // Flame image
                 Image("flame")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -24,9 +28,35 @@ struct CurvedBackgroundView: View {
                     .padding(.top, 92)
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                
+               
+                VStack {
+                    HStack {
+                        Button(action: {
+                          
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color("off_White"))
+                                .font(.system(size: 24, weight: .bold))
+                                .padding(.leading, 16)
+                        }
+                        
+                        Spacer()
+                        
+                        Text(title)
+                            .foregroundColor(Color("off_White"))
+                            .font(.system(size: 36, weight: .bold))
+                            .padding(.trailing, 30)
+                        
+                        Spacer()
+                    }
+                    .padding(.top, 110)
+                }
             }
         }
         .frame(height: 250)
         .edgesIgnoringSafeArea(.top)
     }
 }
+
+

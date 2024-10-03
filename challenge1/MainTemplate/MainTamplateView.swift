@@ -1,13 +1,6 @@
-//
-//  ExampleTamplate.swift
-//  challenge1
-//
-//  Created by Asma on 30/09/2024.
-//
-
 import SwiftUI
 
-struct TamplateView<Content: View>: View {
+struct MainTamplateView<Content: View>: View {
     var title: String
     @ViewBuilder var content: Content
     
@@ -17,7 +10,7 @@ struct TamplateView<Content: View>: View {
             BackgroundView()
 
             VStack{
-                HeaderTitle(title: title)
+                MainHeaderTitle(title: title)
                 Spacer()
             }
             

@@ -11,10 +11,8 @@ import SwiftUI
 struct challenge1App: App {
     var body: some Scene {
         WindowGroup {
-//            SocialIsolationView()
+            MainView()
 
-            ExampleView()
-            
             
         }
     }

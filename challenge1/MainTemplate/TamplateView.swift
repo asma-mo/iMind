@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TamplateView<Content: View>: View {
     var title: String
+    
+    
     @ViewBuilder var content: Content
     
     var body: some View {

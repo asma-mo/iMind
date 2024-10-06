@@ -1,13 +1,6 @@
-//
-//  ExampleTamplate.swift
-//  challenge1
-//
-//  Created by Asma on 30/09/2024.
-//
-
 import SwiftUI
 
-struct TamplateView<Content: View>: View {
+struct MainTamplateView<Content: View>: View {
     var title: String
     @ViewBuilder var content: Content
     
@@ -16,10 +9,8 @@ struct TamplateView<Content: View>: View {
             // Use the reusable Off-white background
             BackgroundView()
 
-            VStack {
-                // Pass the dynamic title to HeaderView
-                HeaderTitle(title: title)
-                
+            VStack{
+                MainHeaderTitle(title: title)
                 Spacer()
             }
             

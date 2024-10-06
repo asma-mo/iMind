@@ -34,16 +34,16 @@ struct HeaderTitle: View {
                
                 VStack {
                     HStack {
-                        Button(action: {
-                          
-                        }) {
-                            Image(systemName: "chevron.left")
-
-                                .foregroundColor(Color("off_White"))
-
-                                .font(.system(size: 24, weight: .bold))
-                                .padding(.leading, 16)
-                        }
+//                        Button(action: {
+//                        
+//                        }) {
+//                            Image(systemName: "chevron.left")
+//
+//                                .foregroundColor(Color("off_White"))
+//
+//                                .font(.system(size: 24, weight: .bold))
+//                                .padding(.leading, 16)
+//                        }
                         
                         Spacer()
                         

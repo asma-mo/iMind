@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct MainHeaderTitle: View {
+    @State private var isStreakViewActive = false
     var title: String
     
     var body: some View {
@@ -28,6 +29,11 @@ struct MainHeaderTitle: View {
                 .fill(Color("Main_Purple"))
                 
                 // Flame image
+                Button(action: {
+                    
+                isStreakViewActive = true
+                    
+                }) {
                 Image("flame")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -36,6 +42,10 @@ struct MainHeaderTitle: View {
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
+                }
+                .fullScreenCover(isPresented: $isStreakViewActive) {
+                                    StreakView()
+                                }
                 
                 VStack {
                     HStack {

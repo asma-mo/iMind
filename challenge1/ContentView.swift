@@ -92,13 +92,13 @@ struct ExperienceView: View {
                 Text(experience.name)
                     .font(.system(size: 22, weight: .bold, design: .rounded))
                     .fontWeight(.bold)
-                    .foregroundColor(Color("off-White"))
+                    .foregroundColor(Color("off_White"))
                 
                 Text(experience.description)
                     .font(.system(size: 15, weight: .regular, design: .rounded))
                     .lineLimit(10)
                     .padding(.trailing, 20)
-                    .foregroundColor(Color("off-White"))
+                    .foregroundColor(Color("off_White"))
             }
             Spacer()
         }

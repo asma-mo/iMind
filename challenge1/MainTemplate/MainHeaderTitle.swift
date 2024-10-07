@@ -40,10 +40,10 @@ struct MainHeaderTitle: View {
                     .frame(width: 70, height: 70)
                     .padding(.top, 92)
                     .padding(.trailing, 16)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+             //       .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 }
-                .fullScreenCover(isPresented: $isStreakViewActive) {
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)                .fullScreenCover(isPresented: $isStreakViewActive) {
                                     StreakView()
                                 }
                 

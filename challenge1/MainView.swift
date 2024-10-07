@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MainView: View {
 
-@State private var isShowingSplash = true
+    @Binding var isShowingSplash: Bool
     
     var body: some View {
         NavigationView {
@@ -51,13 +51,9 @@ struct MainView: View {
                     }
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
 
     }
       
-}
-
-#Preview {
-    MainView()
 }
 

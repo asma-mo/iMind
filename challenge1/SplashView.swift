@@ -35,9 +35,9 @@ struct SplashView: View {
     }
 }
 
-#Preview {
-    MainView()
-}
+//#Preview {
+//    MainView()
+//}
 
 
 

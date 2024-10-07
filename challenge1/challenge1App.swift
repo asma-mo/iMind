@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct challenge1App: App {
+    @State private var isNewUser = !UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+        
+    
+    @State var isShowingSplash = true
     var body: some Scene {
         WindowGroup {
-            MainView()
-
-            
+            if isNewUser {
+                OnboardingViews(isNewUser: $isNewUser)
+            } else {
+                MainView(isShowingSplash: .constant(false)) 
+            }
         }
     }
 }

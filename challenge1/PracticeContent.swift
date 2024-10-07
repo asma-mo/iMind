@@ -4,7 +4,7 @@ struct PracticeContent: View {
     let description: String
     let steps: [String]
     let detailedSteps: [String]
-    
+    @Environment(\.dismiss) var dismiss
     // Array to track the expanded state for each step
     @State private var expandedStates: [Bool]
     
@@ -78,6 +78,25 @@ struct PracticeContent: View {
                     Spacer()
                 }
             }
+            VStack {
+                HStack {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Color("off_White"))
+                            .font(.system(size: 24, weight: .bold))
+                    }
+                    .padding(.leading, 30)
+                    .padding(.top, 47)
+                    
+                    Spacer()
+                }
+                Spacer()
+            }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+
         }
     }
 }

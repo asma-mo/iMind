@@ -21,6 +21,7 @@ struct SocialPracticeView : View {
     }
 
 
+
 #Preview {
     SocialPracticeView()
 }

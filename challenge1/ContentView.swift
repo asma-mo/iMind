@@ -2,12 +2,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedExperience: Experience? = nil
+    
     let experiences: [Experience]
     
     init(experiences: [Experience]) {
         self.experiences = experiences
     }
-    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
             BackgroundView()
@@ -28,10 +29,10 @@ struct ContentView: View {
                 .blur(radius: selectedExperience != nil ? 5 : 0)
             }
             
-            VStack {
-                HeaderTitle(title: "Past Exp.")
-                Spacer()
-            }
+           VStack {
+               HeaderTitle(title: "Past Exp.")
+               Spacer()
+           }
             
             if let experience = selectedExperience {
                 ZStack {
@@ -46,6 +47,25 @@ struct ContentView: View {
                 }
             }
         }
+        VStack {
+            HStack {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(Color("off_White"))
+                        .font(.system(size: 24, weight: .bold))
+                }
+                .padding(.leading, 30)
+                .padding(.top, 47)
+                
+                Spacer()
+            }
+            Spacer()
+        }
+    .navigationBarBackButtonHidden(true)
+    .navigationBarHidden(true)
+
     }
 }
 
@@ -92,6 +112,7 @@ struct ExperienceView: View {
 }
 
 struct DetailedExperienceView: View {
+    @Environment(\.dismiss) var dismiss
     var experience: Experience
     @Binding var isPresented: Experience?
     
@@ -125,5 +146,10 @@ struct DetailedExperienceView: View {
             
             Spacer()
         }
+
     }
+}
+
+#Preview {
+    ProcrastinationReviews()
 }

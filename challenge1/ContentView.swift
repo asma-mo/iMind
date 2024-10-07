@@ -90,20 +90,20 @@ struct ExperienceView: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(experience.name)
-                    .font(.title2)
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("off-White"))
                 
                 Text(experience.description)
-                    .font(.subheadline)
+                    .font(.system(size: 15, weight: .regular, design: .rounded))
                     .lineLimit(10)
                     .padding(.trailing, 20)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("off-White"))
             }
             Spacer()
         }
         .padding()
-        .background(Color(red: 105/255, green: 112/255, blue: 145/255))
+        .background(Color("Main_Purple"))
         .cornerRadius(20)
         .onTapGesture {
             selectedExperience = experience
@@ -129,18 +129,18 @@ struct DetailedExperienceView: View {
                         .padding(.trailing, 8)
                     
                     Text(experience.name)
-                        .font(.title2)
+                        .font(.system(size: 22, weight: .bold, design: .rounded))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
                 
                 Text(experience.fullMessage)
-                    .font(.body)
+                    .font(.system(size: 17, weight: .regular, design: .rounded))
                     .foregroundColor(.white)
                     .padding(.top, 8)
             }
             .padding()
-            .background(Color(red: 105/255, green: 112/255, blue: 145/255))
+            .background(Color("Main_Purple"))
             .cornerRadius(12)
             .padding(.horizontal, 24)
             

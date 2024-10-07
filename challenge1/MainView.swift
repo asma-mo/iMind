@@ -18,8 +18,7 @@ struct MainView: View {
                             //Text("Social Isolation").fontWeight(.semibold).font(.largeTitle).foregroundColor(Color("off_White"))
                             NavigationLink(destination: SocialIsolationView()) {
                                 Text("Social Isolation")
-                                    .fontWeight(.semibold)
-                                    .font(.largeTitle)
+                                    .font(.system(size: 34, weight: .semibold, design: .rounded))
                                     .foregroundColor(Color("off_White"))
                             }
                             
@@ -33,7 +32,7 @@ struct MainView: View {
                             Rectangle().frame(width: 300, height: 100).aspectRatio(contentMode: .fit).foregroundColor(Color("Main_Purple")).cornerRadius(30)
                             
                             NavigationLink(destination: ProcrastinationView()) {
-                                Text("Procrastnation").fontWeight(.semibold).font(.largeTitle).foregroundColor(Color("off_White"))
+                                Text("Procrastnation").font(.system(size: 34, weight: .semibold, design: .rounded)).foregroundColor(Color("off_White"))
                             }
 
                             

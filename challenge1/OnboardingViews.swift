@@ -4,7 +4,7 @@ struct OnboardingViews: View {
     
     @State var isShowingSplash = false
     @State var isShowingSplashFirstTime = true
-    let purple = Color(red: 109/255, green: 119/255, blue: 157/255)
+  
     @Binding var isNewUser: Bool 
     
     let pages = [
@@ -61,7 +61,7 @@ struct OnboardingViews: View {
                         ForEach(0..<pages.count, id: \.self) { index in
                             RoundedRectangle(cornerRadius: 3)
                                 .frame(width: currentPage == index ? 16 : 8, height: 6)
-                                .foregroundColor(currentPage == index ? purple : .gray.opacity(0.5))
+                                .foregroundColor(currentPage == index ? Color("Main_Purple") : .gray.opacity(0.5))
                                 .animation(.easeInOut, value: currentPage)
                         }
                     }
@@ -79,6 +79,7 @@ struct OnboardingViews: View {
                         }) {
                             NavigationLink(destination: MainView(isShowingSplash: $isShowingSplash)) {
                                 Text("Skip")
+                                    .font(.system(size: 17, weight: .regular, design: .rounded))
                                     .foregroundColor(.gray) // لون باهت
                                     .opacity(0.6) // تعتيم النص لجعله باهتًا
                             }

@@ -19,7 +19,7 @@ struct ProcrastinationView: View {
                     VStack {
                         Text("Procrastination")
                             .foregroundColor(Color("off_White"))
-                            .font(.system(size: 36, weight: .bold))
+                            .font(.system(size: 36, weight: .bold, design: .rounded))
                             .padding(.trailing, 30)
                             .padding(.top, 39)
                         Spacer()
@@ -35,8 +35,7 @@ struct ProcrastinationView: View {
                                 
                                 NavigationLink(destination: SocialPracticeView()) {
                                     Text("Practice")
-                                        .fontWeight(.semibold)
-                                        .font(.largeTitle)
+                                        .font(.system(size: 34, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))
                                 }
                             }
@@ -50,8 +49,7 @@ struct ProcrastinationView: View {
                                 
                                 NavigationLink(destination: ProcrastinationReviews()) {
                                     Text("Past Experiences")
-                                        .fontWeight(.semibold)
-                                        .font(.largeTitle)
+                                        .font(.system(size: 34, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))
                                 }
                             }
@@ -65,10 +63,9 @@ struct ProcrastinationView: View {
                                 
                                 HStack {
                                     Text(getCurrentDateString())
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 33))
+                                        .font(.system(size: 30, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))
-                                        .padding(.leading, 15)
+                                        .padding(.leading, 30)
                                     
                                     Button(action: {
                                         didTapButton.toggle()
@@ -76,13 +73,14 @@ struct ProcrastinationView: View {
                                         ZStack {
                                             if didTapButton {
                                                 GifReaderView(gifName: "flame2_animation")
-                                                    .frame(width: 109, height: 85)
+                                                    .frame(width: 109, height: 80)
                                             } else {
                                                 Image("flame_empty")
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fit)
                                                     .frame(width: 40, height: 40)
                                                     .frame(width: 109, height: 40)
+                                                    
                                             }
                                         }
                                     }

@@ -22,7 +22,7 @@ struct SocialIsolationView: View {
                         
                         Text("Social Isolation")
                             .foregroundColor(Color("off_White"))
-                            .font(.system(size: 36, weight: .bold))
+                            .font(.system(size: 36, weight: .bold, design: .rounded))
                             .padding(.trailing, 30)
                             .padding(.top, 38)
                         Spacer()
@@ -38,8 +38,7 @@ struct SocialIsolationView: View {
                                 
                                 NavigationLink(destination: SocialPracticeView()) {
                                     Text("Practice")
-                                        .fontWeight(.semibold)
-                                        .font(.largeTitle)
+                                        .font(.system(size: 34, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))
                                 }
                             }
@@ -53,8 +52,7 @@ struct SocialIsolationView: View {
                                 
                                 NavigationLink(destination: SocialIsolationReviews()) {
                                     Text("Past Experiences")
-                                        .fontWeight(.semibold)
-                                        .font(.largeTitle)
+                                        .font(.system(size: 34, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))
                                 }
                             }
@@ -68,10 +66,9 @@ struct SocialIsolationView: View {
                                 
                                 HStack {
                                     Text(getCurrentDateString())
-                                        .fontWeight(.semibold)
-                                        .font(.system(size: 33))
+                                        .font(.system(size: 30, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))
-                                        .padding(.leading, 15)
+                                        .padding(.leading, 30)
                                     
                                     Button(action: {
                                         didTapButton.toggle()

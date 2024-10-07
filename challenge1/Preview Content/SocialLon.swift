@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ProcrastinationPracticeView : View {
+struct SocialLon : View {
     
     var body: some View {
         NavigationView {
@@ -32,6 +32,6 @@ struct ProcrastinationPracticeView : View {
 }
 
 #Preview {
-    ProcrastinationPracticeView()
+    SocialLon()
 }
 

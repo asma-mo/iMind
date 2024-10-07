@@ -70,7 +70,7 @@ struct PracticeContent: View {
                             .font(.body)
                         }
                         .padding(.top, 200)
-                    }
+                    }.padding()
                 }
                 
                 VStack {
@@ -83,7 +83,7 @@ struct PracticeContent: View {
 }
 
 #Preview {
-    SocialPracticeView()
+    ProPracticeView()
 }
 
 

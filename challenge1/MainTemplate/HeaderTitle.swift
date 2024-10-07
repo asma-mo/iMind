@@ -62,10 +62,8 @@ struct HeaderTitle: View {
                         Spacer()
                         
                         Text(title)
-
                             .foregroundColor(Color("off_White"))
-
-                            .font(.system(size: 36, weight: .bold))
+                            .font(.system(size: 36, weight: .bold, design: .rounded))
                             .padding(.trailing, 30)
                         
                         Spacer()

@@ -17,8 +17,7 @@ struct StreakView: View {
             TamplateView(title: "Streak") {
                 VStack(spacing: 16) {
                     Text("Training Streak")
-                        .bold()
-                        .font(.system(size: 30))
+                        .font(.system(size: 30, weight: .bold, design: .rounded))
                         .padding(.bottom, 20)
                         .foregroundColor(.black)
 
@@ -52,20 +51,18 @@ struct StreakView: View {
                                 }
 
                                 Text(days[index])
-                                    .font(.system(size: 16))
-                                    .bold()
+                                    .font(.system(size: 16, weight: .bold, design: .rounded))
                             }
                         }
                     }
 
                     Text("\(streak) DAYS")
                         .padding(12)
-                        .font(.title)
-                        .bold()
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
                         .padding()
-                        .background(Color(red: 125/255, green: 130/255, blue: 163/255))
+                        .background(Color("Main_Purple"))
                         .cornerRadius(12)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("off_White"))
                         .padding(.top, 50)
                 }
             }

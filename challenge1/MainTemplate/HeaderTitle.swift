@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HeaderTitle: View {
     var title: String
+    @State private var isStreakViewActive = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,6 +24,11 @@ struct HeaderTitle: View {
 
                 
                 // Flame image
+                Button(action: {
+                    
+                isStreakViewActive = true
+                    
+                }) {
                 Image("flame")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -31,9 +37,16 @@ struct HeaderTitle: View {
                     .padding(.trailing, 16)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
+                }
+                .fullScreenCover(isPresented: $isStreakViewActive) {
+                                    StreakView()
+                                }
+                
+                
                
                 VStack {
                     HStack {
+
 //                        Button(action: {
 //                        
 //                        }) {
@@ -44,6 +57,7 @@ struct HeaderTitle: View {
 //                                .font(.system(size: 24, weight: .bold))
 //                                .padding(.leading, 16)
 //                        }
+
                         
                         Spacer()
                         

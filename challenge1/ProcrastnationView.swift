@@ -43,6 +43,7 @@ struct ProcrastinationView: View {
                                 .fontWeight(.semibold)
                                 .font(.largeTitle)
                                 .foregroundColor(Color("off_White"))
+                                
                         }
                         Spacer().frame(height: 120)
 
@@ -91,6 +92,7 @@ struct ProcrastinationView: View {
                         Image(systemName: "chevron.left")
                             .foregroundColor(Color("off_White"))
                             .font(.system(size: 24, weight: .bold))
+                            
                     }
                     .padding(.leading, 30)
                     .padding(.top, 47)

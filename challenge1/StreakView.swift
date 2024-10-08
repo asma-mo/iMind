@@ -2,7 +2,7 @@ import SwiftUI
 
 struct StreakView: View {
     @State var days: [String] = ["S", "M", "T", "W", "T", "F", "S"]
-    @State var isDone: [Bool] = [true, false, false, false, false, false, false]
+    @State var isDone: [Bool] = [true, true, true, true, false, false, false]
     @State var streak: Int = 3
 
     @Environment(\.dismiss) var dismiss
@@ -14,30 +14,30 @@ struct StreakView: View {
 
     var body: some View {
         ZStack {
-            TamplateView(title: "Streak") {
+            StreakTamplateView(title: "Streak") {
                 VStack(spacing: 16) {
                     Text("Training Streak")
                         .font(.system(size: 30, weight: .bold, design: .rounded))
                         .padding(.bottom, 20)
                         .foregroundColor(.black)
-
+                    
                     HStack {
                         Spacer(minLength: 0)
                         ForEach(0..<days.count, id: \.self) { index in
                             Spacer(minLength: 0)
-
+                            
                             if index == currentDayIndex {
                                 Image("arrow_down")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 40, height: 20)
                             }
-
+                            
                             Spacer(minLength: 0)
                         }
                         Spacer(minLength: 0)
                     }
-
+                    
                     HStack(spacing: 12) {
                         ForEach(0..<days.count, id: \.self) { index in
                             VStack(spacing: 4) {
@@ -49,13 +49,13 @@ struct StreakView: View {
                                         .resizable()
                                         .frame(width: 30, height: 40)
                                 }
-
+                                
                                 Text(days[index])
                                     .font(.system(size: 16, weight: .bold, design: .rounded))
                             }
                         }
                     }
-
+                    
                     Text("\(streak) DAYS")
                         .padding(12)
                         .font(.system(size: 28, weight: .bold, design: .rounded))
@@ -72,20 +72,20 @@ struct StreakView: View {
                     Button(action: {
                         dismiss()
                     }) {
-                        Image(systemName: "chevron.left")
+                        Image(systemName: "xmark")
                             .foregroundColor(Color("off_White"))
                             .font(.system(size: 24, weight: .bold))
                     }
                     .padding(.leading, 36)
                     .padding(.top, 55)
-
+                    
                     Spacer()
                 }
                 Spacer()
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
     }
 }
 

@@ -17,7 +17,7 @@ struct SocialPracticeView : View {
             )
             
             
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

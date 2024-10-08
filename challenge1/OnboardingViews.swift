@@ -77,7 +77,7 @@ struct OnboardingViews: View {
                             // الإجراء الذي يحدث عند الضغط على زر "Skip"
                             print("Skip button pressed")
                         }) {
-                            NavigationLink(destination: MainView(isShowingSplash: $isShowingSplash)) {
+                            NavigationLink(destination: MainView()) {
                                 Text("Skip")
                                     .font(.system(size: 17, weight: .regular, design: .rounded))
                                     .foregroundColor(.gray) // لون باهت
@@ -96,4 +96,8 @@ struct OnboardingViews: View {
         }
     }}
 
+
+#Preview {
+    OnboardingViews(isNewUser: .constant(true))
+}
 

@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct PracticeContent: View {
+    @Environment(\.dismiss) var dismiss
     let description: String
     let steps: [String]
     let detailedSteps: [String]
-    @Environment(\.dismiss) var dismiss
+    
     // Array to track the expanded state for each step
     @State private var expandedStates: [Bool]
     
@@ -26,13 +27,15 @@ struct PracticeContent: View {
                     VStack(spacing: 20) {
                         VStack(alignment: .leading, spacing: 30) {
                             Text("Description:")
-                                .font(.system(size: 28, weight: .bold, design: .rounded))
+                                .font(.title)
+                                .fontWeight(.bold)
                             
                             Text(description)
-                                .font(.system(size: 17, weight: .bold, design: .rounded))
+                                .fontWeight(.bold)
                                 
                             Text("Steps:")
-                                .font(.system(size: 28, weight: .bold, design: .rounded))
+                                .font(.title)
+                                .fontWeight(.bold)
                                 .padding(.bottom, 0)
                             
                             VStack(alignment: .leading, spacing: 20) {
@@ -46,29 +49,30 @@ struct PracticeContent: View {
                                                 
                                                     Text("▶︎")
                                                         .rotationEffect(.degrees(expandedStates[index] ? 90 : 0)) // Rotate when expanded
-                                                        .foregroundColor(.purple)
+                                                        .foregroundColor(Color("Main_Purple"))
                                                 
                                             }
                                             
                                         }
                                         VStack{
-                                        Text("\(index + 1). \(steps[index])")
-                                                .font(.system(size: 17, weight: .semibold, design: .rounded))
-                                            .foregroundColor(.black)
+                                            Text("\(index + 1). \(steps[index])")
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.black)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
                                         
                                             if expandedStates[index]{
                                                 Text("\(detailedSteps[index])")
-                                                    .font(.system(size: 17, weight: .regular, design: .rounded))
+                                                    .fontWeight(.regular)
                                                     .foregroundColor(.black).frame(maxWidth: 330)
                                             }
                                         }
                                     }
                                 }
                             }
-                            .font(.system(.body, design: .rounded))
-                        }
+                            .font(.body)
+                        }.foregroundStyle(.black)
                         .padding(.top, 200)
-                    }
+                    }.padding()
                 }
                 
                 VStack {
@@ -76,6 +80,7 @@ struct PracticeContent: View {
                     Spacer()
                 }
             }
+            // Back button overlay
             VStack {
                 HStack {
                     Button(action: {
@@ -87,21 +92,22 @@ struct PracticeContent: View {
                     }
                     .padding(.leading, 30)
                     .padding(.top, 47)
-                    
+
                     Spacer()
                 }
                 Spacer()
             }
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        
 
-        }
+
     }
 }
 
 #Preview {
-    SocialPracticeView()
+    ProcrastnationPractice()
 }
-
 
 

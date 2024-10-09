@@ -1,13 +1,14 @@
 import SwiftUI
 
-struct HeaderTitle: View {
-    var title: String
+struct StrakHeader: View {
     @State private var isStreakViewActive = false
+    var title: String
     
     var body: some View {
+        
         GeometryReader { geometry in
             ZStack(alignment: .top) {
-            
+                
                 Path { path in
                     let width = geometry.size.width
                     let height = geometry.size.height
@@ -19,46 +20,12 @@ struct HeaderTitle: View {
                                       control: CGPoint(x: width / 2, y: height))
                     path.closeSubpath()
                 }
-              
                 .fill(Color("Main_Purple"))
+                
 
                 
-                // Flame image
-                Button(action: {
-                    
-                isStreakViewActive = true
-                    
-                }) {
-                Image("flame")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 70, height: 70)
-                    .padding(.top, 92)
-                    .padding(.trailing, 16)
-                 //   .frame(maxWidth: .infinity, alignment: .trailing)
-                
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .fullScreenCover(isPresented: $isStreakViewActive) {
-                                    StreakView()
-                                }
-                
-                
-               
                 VStack {
                     HStack {
-
-//                        Button(action: {
-//
-//                        }) {
-//                            Image(systemName: "chevron.left")
-//
-//                                .foregroundColor(Color("off_White"))
-//
-//                                .font(.system(size: 24, weight: .bold))
-//                                .padding(.leading, 16)
-//                        }
-
                         
                         Spacer()
                         
@@ -75,6 +42,11 @@ struct HeaderTitle: View {
         }
         .frame(height: 250)
         .edgesIgnoringSafeArea(.top)
+        Spacer()
     }
 }
 
+
+#Preview {
+    StrakHeader(title: "test")
+}

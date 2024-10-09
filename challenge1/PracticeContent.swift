@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PracticeContent: View {
+    @Environment(\.dismiss) var dismiss
     let description: String
     let steps: [String]
     let detailedSteps: [String]
@@ -48,15 +49,16 @@ struct PracticeContent: View {
                                                 
                                                     Text("▶︎")
                                                         .rotationEffect(.degrees(expandedStates[index] ? 90 : 0)) // Rotate when expanded
-                                                        .foregroundColor(.purple)
+                                                        .foregroundColor(Color("Main_Purple"))
                                                 
                                             }
                                             
                                         }
                                         VStack{
-                                        Text("\(index + 1). \(steps[index])")
-                                                .fontWeight(.semibold)
-                                            .foregroundColor(.black)
+                                            Text("\(index + 1). \(steps[index])")
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.black)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
                                         
                                             if expandedStates[index]{
                                                 Text("\(detailedSteps[index])")
@@ -68,9 +70,9 @@ struct PracticeContent: View {
                                 }
                             }
                             .font(.body)
-                        }
+                        }.foregroundStyle(.black)
                         .padding(.top, 200)
-                    }
+                    }.padding()
                 }
                 
                 VStack {
@@ -78,13 +80,34 @@ struct PracticeContent: View {
                     Spacer()
                 }
             }
+            // Back button overlay
+            VStack {
+                HStack {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(Color("off_White"))
+                            .font(.system(size: 24, weight: .bold))
+                    }
+                    .padding(.leading, 30)
+                    .padding(.top, 47)
+
+                    Spacer()
+                }
+                Spacer()
+            }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        
+
+
     }
 }
 
 #Preview {
-    SocialPracticeView()
+    ProcrastnationPractice()
 }
-
 
 

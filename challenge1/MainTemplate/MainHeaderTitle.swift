@@ -44,7 +44,7 @@ struct MainHeaderTitle: View {
                 
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)                .fullScreenCover(isPresented: $isStreakViewActive) {
-                                    StreakView()
+                    StreakView().environmentObject(StreakManager())
                                 }
                 
                 VStack {

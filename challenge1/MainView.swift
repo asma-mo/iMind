@@ -44,12 +44,7 @@ struct MainView: View {
                     }
                 }
 
-                // Show the splash screen if the user is new
-                if isNewUser {
-                    OnboardingViews(isNewUser: $isNewUser)
-                } else if isActive {
-                    SplashView(isActive: $isActive)
-                }
+
             }
         }.navigationBarBackButtonHidden(true)
             .onAppear {

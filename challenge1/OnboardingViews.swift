@@ -2,8 +2,12 @@ import SwiftUI
 
 struct OnboardingViews: View {
     
+    @State var isActive = true
+    @State var isNewUser = UserDefaults.standard.bool(forKey: "isNewUser")
+    
     @State var isShowingSplash = false
     @State var isShowingSplashFirstTime = true
+
     @Binding var isNewUser: Bool
     
     @Environment(\.dismiss) var dismiss
@@ -67,7 +71,7 @@ struct OnboardingViews: View {
                         }
                     }
                     .padding(.bottom, 50)
-                }
+                }.foregroundStyle(.black)
                 
                 // إضافة زر "Skip" في الزاوية اليمنى السفلية
                 VStack {
@@ -92,8 +96,9 @@ struct OnboardingViews: View {
                         .padding(.bottom, 20) // مسافة من الحافة السفلية
                     }
                 }
-                if isShowingSplash {
-                    SplashView(isActive: $isShowingSplashFirstTime)
+                // Show the splash screen if the user is new
+                    if isActive {
+                    SplashView(isActive: $isActive)
                 }
 
             }
@@ -102,6 +107,6 @@ struct OnboardingViews: View {
 
 
 #Preview {
-    OnboardingViews(isNewUser: .constant(true))
+    OnboardingViews()
 }
 

@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		72F8A42E2CA96D0E0033A802 /* challenge1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F8A42E2CA96D0E0033A802 /* iMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F8A43E2CA96D100033A802 /* challenge1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challenge1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F8A4482CA96D100033A802 /* challenge1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challenge1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		72F8A42F2CA96D0E0033A802 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72F8A42E2CA96D0E0033A802 /* challenge1.app */,
+				72F8A42E2CA96D0E0033A802 /* iMind.app */,
 				72F8A43E2CA96D100033A802 /* challenge1Tests.xctest */,
 				72F8A4482CA96D100033A802 /* challenge1UITests.xctest */,
 			);
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72F8A42D2CA96D0E0033A802 /* challenge1 */ = {
+		72F8A42D2CA96D0E0033A802 /* iMind */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72F8A4522CA96D100033A802 /* Build configuration list for PBXNativeTarget "challenge1" */;
+			buildConfigurationList = 72F8A4522CA96D100033A802 /* Build configuration list for PBXNativeTarget "iMind" */;
 			buildPhases = (
 				72F8A42A2CA96D0E0033A802 /* Sources */,
 				72F8A42B2CA96D0E0033A802 /* Frameworks */,
@@ -110,11 +110,11 @@
 			fileSystemSynchronizedGroups = (
 				72F8A4302CA96D0E0033A802 /* challenge1 */,
 			);
-			name = challenge1;
+			name = iMind;
 			packageProductDependencies = (
 			);
 			productName = challenge1;
-			productReference = 72F8A42E2CA96D0E0033A802 /* challenge1.app */;
+			productReference = 72F8A42E2CA96D0E0033A802 /* iMind.app */;
 			productType = "com.apple.product-type.application";
 		};
 		72F8A43D2CA96D100033A802 /* challenge1Tests */ = {
@@ -203,7 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72F8A42D2CA96D0E0033A802 /* challenge1 */,
+				72F8A42D2CA96D0E0033A802 /* iMind */,
 				72F8A43D2CA96D100033A802 /* challenge1Tests */,
 				72F8A4472CA96D100033A802 /* challenge1UITests */,
 			);
@@ -261,12 +261,12 @@
 /* Begin PBXTargetDependency section */
 		72F8A4402CA96D100033A802 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72F8A42D2CA96D0E0033A802 /* challenge1 */;
+			target = 72F8A42D2CA96D0E0033A802 /* iMind */;
 			targetProxy = 72F8A43F2CA96D100033A802 /* PBXContainerItemProxy */;
 		};
 		72F8A44A2CA96D100033A802 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72F8A42D2CA96D0E0033A802 /* challenge1 */;
+			target = 72F8A42D2CA96D0E0033A802 /* iMind */;
 			targetProxy = 72F8A4492CA96D100033A802 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -399,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"challenge1/Preview Content\"";
-				DEVELOPMENT_TEAM = H2AF7J229T;
+				DEVELOPMENT_TEAM = GD724ZJD7H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -412,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = A.challenge1;
+				PRODUCT_BUNDLE_IDENTIFIER = A.iMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"challenge1/Preview Content\"";
-				DEVELOPMENT_TEAM = H2AF7J229T;
+				DEVELOPMENT_TEAM = GD724ZJD7H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -441,7 +441,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = A.challenge1;
+				PRODUCT_BUNDLE_IDENTIFIER = A.iMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -533,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72F8A4522CA96D100033A802 /* Build configuration list for PBXNativeTarget "challenge1" */ = {
+		72F8A4522CA96D100033A802 /* Build configuration list for PBXNativeTarget "iMind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72F8A4532CA96D100033A802 /* Debug */,

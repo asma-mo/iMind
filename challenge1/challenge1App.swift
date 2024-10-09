@@ -8,11 +8,11 @@
 import SwiftUI
 
 @main
-struct challenge1App: App {
-    @StateObject var streakManager = StreakManager()
+struct iMind: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            OnboardingViews()
         }
     }
 }
+    

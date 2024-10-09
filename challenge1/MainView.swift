@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var isActive = true
-    @State var isNewUser = UserDefaults.standard.bool(forKey: "isNewUser") // Check if it's a new user
+
 
     var body: some View {
         NavigationView {
@@ -43,12 +42,7 @@ struct MainView: View {
                     }
                 }
 
-                // Show the splash screen if the user is new
-                if isNewUser {
-                    OnboardingViews(isNewUser: $isNewUser)
-                } else if isActive {
-                    SplashView(isActive: $isActive)
-                }
+
             }
         }.navigationBarBackButtonHidden(true)
     }

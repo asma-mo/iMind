@@ -33,7 +33,7 @@ struct ProcrastinationView: View {
                                     .foregroundColor(Color("Main_Purple"))
                                     .cornerRadius(30)
                                 
-                                NavigationLink(destination: SocialPracticeView()) {
+                                NavigationLink(destination: ProcrastnationPractice()) {
                                     Text("Practice")
                                         .font(.system(size: 34, weight: .semibold, design: .rounded))
                                         .foregroundColor(Color("off_White"))

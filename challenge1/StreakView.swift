@@ -3,7 +3,7 @@ import SwiftUI
 struct StreakView: View {
     @State var days: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     @State var isDone: [Bool] = [true, true, true, true, false, false, false]
-    @State var streak: Int = 3
+    @State var streak: Int = 4
 
     @Environment(\.dismiss) var dismiss
 
@@ -52,6 +52,7 @@ struct StreakView: View {
                                 
                                 Text(days[index])
                                     .font(.system(size: 16, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.black)
                             }
                         }
                     }

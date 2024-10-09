@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProcrastinationView: View {
-    @State var didTapButton: Bool = false
+    @EnvironmentObject var streakManager: StreakManager
     @Environment(\.dismiss) var dismiss
     
     func getCurrentDateString() -> String {
@@ -23,6 +23,7 @@ struct ProcrastinationView: View {
                             .padding(.trailing, 30)
                             .padding(.top, 39)
                         Spacer()
+
                         
                         VStack {
                             Spacer()
@@ -68,10 +69,14 @@ struct ProcrastinationView: View {
                                         .padding(.leading, 30)
                                     
                                     Button(action: {
-                                        didTapButton.toggle()
+                                        streakManager.toggleStreak()
+//                                        streakManager.didTapButton.toggle()
+//                                        if streakManager.didTapButton {
+//                                                                                    streakManager.incrementStreak()
+//                                                                                }
                                     }) {
                                         ZStack {
-                                            if didTapButton {
+                                            if streakManager.isDone[streakManager.currentDayIndex] {
                                                 GifReaderView(gifName: "flame2_animation")
                                                     .frame(width: 109, height: 80)
                                             } else {
@@ -82,6 +87,7 @@ struct ProcrastinationView: View {
                                                     .frame(width: 109, height: 40)
                                                     
                                             }
+
                                         }
                                     }
                                 }
@@ -90,6 +96,7 @@ struct ProcrastinationView: View {
                         .padding()
                     }
                 }
+
                 
                 // Back button overlay
                 VStack {
@@ -105,6 +112,7 @@ struct ProcrastinationView: View {
                         .padding(.top, 47)
                         
                         Spacer()
+
                     }
                     Spacer()
                 }
@@ -120,5 +128,5 @@ struct ProcrastinationView: View {
 
 
 #Preview {
-    ProcrastinationView()
+    ProcrastinationView().environmentObject(StreakManager())
 }

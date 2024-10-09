@@ -7,7 +7,10 @@ struct OnboardingViews: View {
     
     @State var isShowingSplash = false
     @State var isShowingSplashFirstTime = true
-  
+
+    @Binding var isNewUser: Bool
+    
+    @Environment(\.dismiss) var dismiss
     
     let pages = [
         "Many adults find themselves trapped in a cycle of negative thoughts and behaviors, struggling to break free.",
@@ -77,14 +80,17 @@ struct OnboardingViews: View {
                         Spacer() // يجعل الزر في اليمين
                         Button(action: {
                             // الإجراء الذي يحدث عند الضغط على زر "Skip"
-                            print("Skip button pressed")
+//                            print("Skip button pressed")
+                            isNewUser = false
+                            UserDefaults.standard.set(false, forKey: "isNewUser")
+                            dismiss()
                         }) {
-                            NavigationLink(destination: MainView()) {
+//                            NavigationLink(destination: MainView()) {
                                 Text("Skip")
                                     .font(.system(size: 17, weight: .regular, design: .rounded))
                                     .foregroundColor(.gray) // لون باهت
                                     .opacity(0.6) // تعتيم النص لجعله باهتًا
-                            }
+//                            }
                         }
                         .padding(.trailing, 40) // مسافة من الحافة اليمنى
                         .padding(.bottom, 20) // مسافة من الحافة السفلية

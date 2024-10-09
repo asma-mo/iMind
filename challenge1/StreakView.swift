@@ -1,10 +1,15 @@
 import SwiftUI
 
 struct StreakView: View {
+
+  
     @State var days: [String] = ["S", "M", "T", "W", "T", "F", "S"]
     @State var isDone: [Bool] = [true, true, true, true, false, false, false]
     @State var streak: Int = 4
-
+//    @State var days: [String] = ["S", "M", "T", "W", "T", "F", "S"]
+//    @State var isDone: [Bool] = [true, true, true, true, false, false, false]
+//    @State var streak: Int = 3
+    @EnvironmentObject var streakManager: StreakManager
     @Environment(\.dismiss) var dismiss
 
     var currentDayIndex: Int {
@@ -23,10 +28,10 @@ struct StreakView: View {
                     
                     HStack {
                         Spacer(minLength: 0)
-                        ForEach(0..<days.count, id: \.self) { index in
+                        ForEach(0..<streakManager.isDone.count, id: \.self) { index in
                             Spacer(minLength: 0)
                             
-                            if index == currentDayIndex {
+                            if index == streakManager.currentDayIndex {
                                 Image("arrow_down")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -39,25 +44,27 @@ struct StreakView: View {
                     }
                     
                     HStack(spacing: 12) {
-                        ForEach(0..<days.count, id: \.self) { index in
+                        ForEach(0..<streakManager.isDone.count, id: \.self) { index in
                             VStack(spacing: 4) {
-                                Button(action: {
-                                    isDone[index].toggle()
-                                    streak = isDone.filter { $0 }.count
-                                }) {
-                                    Image(isDone[index] ? "flame_filled" : "flame_empty")
+//                                Button(action: {
+//                                    isDone[index].toggle()
+//                                    streak = isDone.filter { $0 }.count
+//                                }) {
+                                Image(streakManager.isDone[index] ? "flame_filled" : "flame_empty")
                                         .resizable()
                                         .frame(width: 30, height: 40)
-                                }
+                            
+//                                }
                                 
-                                Text(days[index])
+                            Text(streakManager.days[index])
                                     .font(.system(size: 16, weight: .bold, design: .rounded))
                                     .foregroundStyle(.black)
                             }
                         }
                     }
+
                     
-                    Text("\(streak) DAYS")
+                Text("\(streakManager.streak) DAYS")
                         .padding(12)
                         .font(.system(size: 28, weight: .bold, design: .rounded))
                         .padding()
@@ -90,8 +97,10 @@ struct StreakView: View {
     }
 }
 
+
 struct StreakView_Previews: PreviewProvider {
     static var previews: some View {
         StreakView()
+            .environmentObject(StreakManager()) //mock instance
     }
 }

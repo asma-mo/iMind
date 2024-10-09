@@ -151,6 +151,8 @@ struct DetailedExperienceView: View {
     }
 }
 
+
 #Preview {
     ProcrastinationReviews()
 }
+

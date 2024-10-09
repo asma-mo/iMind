@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct iMind: App {
-   
     var body: some Scene {
         WindowGroup {
             OnboardingViews()
